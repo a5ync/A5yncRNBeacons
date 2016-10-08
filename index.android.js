@@ -20,9 +20,11 @@ class A5yncRNBeacons extends Component {
     );
     this.state = {
       // region information
-      // B9407F30-F5F8-466E-AFF9-25556B57FE6D
+      // Estimote uuid = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
+      // RadiusNetworks uuid = "2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6";
       // uuidRef: '6665542b-41a1-5e00-931c-6a82db9b78c1',
       //uuidRef: 'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
+      uuidRef: '2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6',
       // React Native ListView datasource initialization
       dataSource: ds.cloneWithRows([])
     };
