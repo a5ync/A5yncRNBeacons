@@ -1,4 +1,4 @@
-# Setup
+### Setup
 
 - install an rnpm
 
@@ -25,8 +25,8 @@ curl "http://localhost:8081/index.android.bundle?platform=android&dev=true&hot=f
 react-native run-android
 ```
 
-# Setting the environment for the debugging (Android Studio 2.2)
-_Android Studio 2.2 reuires Java SDK ver 9_
+### Setting the environment for the debugging (Android Studio 2.2)
+_Android Studio 2.2 reuires Java SDK ver 8_
 	
 Add the content below to your ~/.bash_profile config file
 
