@@ -26,7 +26,7 @@ react-native run-android
 ```
 
 ### Setting the environment for the debugging (Android Studio 2.2)
-_Android Studio 2.2 reuires Java SDK ver 8_
+_Android Studio 2.2 requires Java SDK ver 8_
 	
 Add the content below to your ~/.bash_profile config file
 
