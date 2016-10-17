@@ -24,7 +24,7 @@ class A5yncRNBeacons extends Component {
       // RadiusNetworks uuid = "2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6";
       // uuidRef: '6665542b-41a1-5e00-931c-6a82db9b78c1',
       //uuidRef: 'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
-      uuidRef: '2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6',
+      //uuidRef: '2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6',
       // React Native ListView datasource initialization
       dataSource: ds.cloneWithRows([])
     };
@@ -88,9 +88,29 @@ class A5yncRNBeacons extends Component {
     );
   }
 
+  
+
+
   renderRow(rowData) {
+    var beaconStyle =function (proximity)
+      {
+        var fProximity = parseFloat(proximity).toFixed(2);
+        if(fProximity<0.05)
+        {
+          return 'green'
+        }
+        else if(fProximity<1.0)
+        {
+          return 'yellow'
+        }
+        else
+        {
+           return 'gray'
+        }
+      }
+
     return (
-      <View style={styles.row}>
+      <View style={[styles.row, {backgroundColor:beaconStyle(rowData.distance )}]}>
         <Text style={styles.smallText}>
           UUID: {rowData.uuid ? rowData.uuid  : 'NA'}
         </Text>
@@ -107,7 +127,7 @@ class A5yncRNBeacons extends Component {
           Proximity: {rowData.proximity ? rowData.proximity : 'NA'}
         </Text>
         <Text>
-          XDistance: {rowData.distance ? rowData.distance : 'NA'}m
+          Distance: {rowData.distance ? parseFloat(rowData.distance).toFixed(2) : 'NA'}m
         </Text>
       </View>
     );
@@ -145,16 +165,16 @@ const styles = StyleSheet.create({
     //order:1
   },
   row: {
-    //padding: 8,
+    padding: 8,
     //paddingBottom: 16,
     //order:2,
     flex: 1,
-    backgroundColor: 'gray',
+    //backgroundColor: 'coral',
     alignSelf: 'stretch'
 
   },
   smallText: {
-    fontSize: 11
+    fontSize:10
   }
 });
 
